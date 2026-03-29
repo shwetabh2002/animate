@@ -4,8 +4,11 @@ services:
     runtime: node
     region: oregon
     plan: free
+    rootDir: web
     buildCommand: npm install && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 18
+      - key: NODE_ENV
+        value: production
