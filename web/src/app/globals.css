@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1c1917;
+  --section-y: clamp(4.5rem, 10vw, 8rem);
+  --section-y-lg: clamp(6rem, 14vw, 11rem);
+
+  /* Professional color system */
+  --color-primary: #0f172a;
+  --color-accent-blue: #2563eb;
+  --color-accent-orange: #ea580c;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #64748b;
+  --color-bg-light: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: rgb(37 99 235 / 0.1);
+  color: rgb(15 23 42);
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Typography scale */
+.text-display {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-heading-1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.text-heading-2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.text-body-large {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.text-body {
+  font-size: clamp(0.875rem, 1vw, 1rem);
+  line-height: 1.6;
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Videos and large files
+*.mov
+*.mp4
+*.avi
+
+# WhatsApp files
+WhatsApp*/
+
+# Node modules
+web/node_modules/
+web/.next/
+
+# Env files
+web/.env.local
+web/.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude
+.claude/
